@@ -62,7 +62,8 @@ function CustomerTable() {
         title: 'Oops...',
         text: 'Password length is min 6 and max length is 15',
       })
-    } else {
+    } 
+    else {
       submit()
     }
   }

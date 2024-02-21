@@ -59,20 +59,20 @@ export default function Shows() {
   const findslot = (id) => {
     switch (id) {
       case 1:
-        return '09:00AM to 12:00PM'
-      case 2:
-        return '12:00PM to 03:00PM'
-      case 3:
-        return '03:00PM to 06:00PM'
-      case 4:
-        return '06:00PM to 09:00PM'
-      case 5:
-        return '09:00PM to 12:00PM'
+        return '00:00AM to 11:59PM'
+      // case 2:
+      //   return '12:00PM to 03:00PM'
+      // case 3:
+      //   return '03:00PM to 06:00PM'
+      // case 4:
+      //   return '06:00PM to 09:00PM'
+      // case 5:
+      //   return '09:00PM to 12:00PM'
     }
   }
   const handleDelete = (id) => {
     axios
-      .delete('http://localhost:8080/api/shows/' + id)
+      .delete('http://localhost:7979/api/shows/' + id)
       .then((resp) => {
         swal.fire({
           icon: 'error',
@@ -112,8 +112,8 @@ export default function Shows() {
             <table className='table table-bordered'>
               <thead>
                 <th>Id</th>
-                <th>Park Name</th>
-                <th>Park Address</th>
+                <th>Parking Name</th>
+                <th>Parking Address</th>
                 <th>Parking Time</th>
                 <th>price</th>
                 <th>Date</th>
@@ -160,7 +160,7 @@ export default function Shows() {
                 </select>
               </div>
               <div className='mb-2'>
-                <label>Park Address</label>
+                <label>Parking Address</label>
                 <select
                   className='form-control form-control-sm'
                   value={hallid}
@@ -189,11 +189,11 @@ export default function Shows() {
                   className='form-control form-control-sm'
                 >
                   <option value=''>Select Time Slot</option>
-                  <option value='1'>09:00AM to 12:00PM</option>
-                  <option value='2'>12:00PM to 03:00PM</option>
+                  <option value='1'>00:00AM to 11:59PM</option>
+                  {/* <option value='2'>12:00PM to 03:00PM</option>
                   <option value='3'>03:00PM to 06:00PM</option>
                   <option value='4'>06:00PM to 09:00PM</option>
-                  <option value='5'>09:00PM to 12:00AM</option>
+                  <option value='5'>09:00PM to 12:00AM</option> */}
                 </select>
               </div>
               <div className='mb-2'>

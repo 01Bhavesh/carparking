@@ -19,7 +19,7 @@ export default function PaymentForm(item){
             "amount":amount    
         }
 
-        axios.post('http://localhost:8080/api/bookings',data)
+        axios.post('http://localhost:7979/api/bookings',data)
         .then(resp=>{
             Swal.fire({title:resp.data})
             navigate("/")

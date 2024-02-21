@@ -95,16 +95,16 @@ export default function Booknow() {
           <div class='col-sm-3'>
             <div className='card'>
               <img
-                src={'http://localhost:8080/' + show?.movie.poster}
+                src={'http://localhost:7979/' + show?.movie.poster}
                 className='card-img-top'
               />
               <div className='card-body text-center'>
                 <h6>{show?.movie.movieName} ({show?.movie.year})</h6>
                 <h6>{show?.movie.description}</h6>
-                <h6>Park owner name: {show?.movie.actor}</h6>
-                <h6>Park worker name: {show?.movie.actress}</h6>
-                <h6>Park facility: {show?.movie.director}</h6><hr/>
-                <h6>Park Address : {show?.hall.hallDesc}</h6>
+                <h6>Parking owner name: {show?.movie.actor}</h6>
+                <h6>Parking worker name: {show?.movie.actress}</h6>
+                <h6>Parking facility: {show?.movie.director}</h6><hr/>
+                <h6>Parking Address : {show?.hall.hallDesc}</h6>
                 <h6>Time Slot: {findslot(show?.slot)}</h6>
               </div>
             </div>

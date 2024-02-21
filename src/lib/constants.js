@@ -1,4 +1,4 @@
-export const baseUrl='http://localhost:8080/'
+export const baseUrl='http://localhost:7979/'
 
 export const apiUrls={
     LOGIN_URL:'api/users/validate',

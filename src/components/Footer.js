@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
       <div>
         <h2>Car Parking Booking</h2>
-        <p>Contact No: +9198xxxxxxxx    &ensp; &ensp; &ensp;    Gmail: carparking@gmail.com</p>
+        <p>Contact No: +918874586435    &ensp; &ensp; &ensp;    Gmail: carparking@gmail.com</p>
 
       </div>
 

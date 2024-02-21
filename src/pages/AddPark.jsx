@@ -72,13 +72,13 @@ export default function AddPark() {
   }
 
   const handleDelete = (id) => {
-    axios
-      .delete(baseUrl+apiUrls.MOVIES_URL + id)
+    axios.delete(baseUrl+apiUrls.MOVIES_URL + id)
       .then((resp) => {
-        swal.fire({
-          icon: 'error',
+        swal.fire({ title: resp.data })({
+          // icon: 'error',
           title: 'Deleted',
           text: 'Park Deleted  Successfully',
+        
         })
         loadData()
       })
@@ -87,6 +87,7 @@ export default function AddPark() {
           title: 'Error',
           icon: 'error',
           text: 'Cannot delete park',
+          
         })
       })
   }
@@ -106,7 +107,7 @@ export default function AddPark() {
       <div className='container mt-5'>
         <div className='row'>
           <div className='col-sm-8'>
-            <h5 className='p-2'>Park List</h5>
+            <h5 className='p-2'>Parking List</h5>
             <table className='table table-bordered'>
               <thead>
                 <th>Id</th>
@@ -120,7 +121,7 @@ export default function AddPark() {
                     <td>
                       <img
                       className='float-start'
-                        src={'http://localhost:8080/' + x?.poster}
+                        src={'http://localhost:7979/' + x?.poster}
                         style={{
                           width: '100px',
                           height: '120px',
@@ -128,8 +129,8 @@ export default function AddPark() {
                         }}
                       />
                       {x?.movieName}<br/>
-                      Park owner name: {x?.actor}<br/>
-                      Park worker name: {x?.actress}
+                      Parking owner name: {x?.actor}<br/>
+                      Parking worker name: {x?.actress}
                     </td>
                     <td>
                       <button
@@ -151,10 +152,10 @@ export default function AddPark() {
             </table>
           </div>
           <div className='col-sm-4'>
-            <h5>Add Park</h5>
+            <h5>Add Parking</h5>
             <form>
               <div className='mb-2'>
-                <label>Park Name</label>
+                <label>Parking Name</label>
                 <input
                   type='text'
                   className='form-control form-control-sm'
@@ -163,7 +164,7 @@ export default function AddPark() {
                 />
               </div>
               <div className='mb-2'>
-                <label>Park Owner Name</label>
+                <label>Parking Owner Name</label>
                 <input
                   type='text'
                   className='form-control form-control-sm'
@@ -172,7 +173,7 @@ export default function AddPark() {
                 />
               </div>
               <div className='mb-2'>
-                <label>Park worker Name</label>
+                <label>Parking worker Name</label>
                 <input
                   type='text'
                   className='form-control form-control-sm'
@@ -190,7 +191,7 @@ export default function AddPark() {
                 />
               </div>
               <div className='mb-2'>
-                <label>Park build year</label>
+                <label>Parking build year</label>
                 <input
                   type='number'
                   className='form-control form-control-sm'

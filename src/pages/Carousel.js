@@ -45,16 +45,12 @@ export default function Carouselslide() {
                 <div className='col-sm-3'>
                 <select className="form-control me-2" value={slot} onChange={e=>setslot(e.target.value)}>
                   <option value=''>Select Time Slot</option>
-                  <option value='1'>09:00AM to 12:00PM</option>
-                  <option value='2'>12:00PM to 03:00PM</option>
-                  <option value='3'>03:00PM to 06:00PM</option>
-                  <option value='4'>06:00PM to 09:00PM</option>
-                  <option value='5'>09:00PM to 12:00AM</option>
-                </select>
+                  <option value='1'>00:00AM to 11:59PM</option>
+                  </select>
                 </div>
                <div className='col-sm-2'>
                 <select className="form-control me-2" value={hallId} onChange={e=>sethallId(e.target.value)}>
-                    <option value="">Select Park Address</option>
+                    <option value="">Select Parking Address</option>
                     {halls.map(x=>(
                     <option value={x.hallId}>{x.hallDesc}</option>
                     ))}

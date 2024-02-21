@@ -84,7 +84,7 @@ export default function Address() {
             <table className='table table-bordered'>
               <thead>
                 <th>Id</th>
-                <th>Park Address</th>
+                <th>Parking Address</th>
                 <th>Vehical Capacity</th>
                 <th>Action</th>
               </thead>
@@ -111,12 +111,12 @@ export default function Address() {
             {showadd && (
               <div className='card'>
                 <div className='card-header text-center'>
-                  <h5>Add Park Address</h5>
+                  <h5>Add Parking Address</h5>
                 </div>
                 <div className='card-body'>
                   <form>
                     <div className='mb-2'>
-                      <label>Park Address</label>
+                      <label>Parking Address</label>
                       <input
                         type='text'
                         className='form-control form-control-sm'

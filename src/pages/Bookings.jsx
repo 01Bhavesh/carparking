@@ -27,7 +27,7 @@ export default function Bookings() {
           <thead>
             <th>Id</th>
             <th>Booking Date</th>
-            <th>Park Name</th>
+            <th>Parking Name</th>
             <th>User Name</th>
             <th>No of space book</th>
             <th>Parking Date</th>
@@ -48,8 +48,7 @@ export default function Bookings() {
                   {x.status === 'Booked' ? (
                     <button
                       onClick={(e) => handleCancel(x.bookingId)}
-                      className='btn btn-danger btn-sm'
-                    >
+                      className='btn btn-danger btn-sm'>
                       Cancel Booking
                     </button>
                   ) : null}

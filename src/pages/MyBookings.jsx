@@ -5,15 +5,30 @@ import { apiUrls, baseUrl } from '../lib/constants'
 import {findslot, formatDate} from '../lib/util'
 
 export default function MyBookings() {
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
   const handleCancel = (id) => {
-    axios
-      .get(baseUrl+apiUrls.CANCELLED_BOOKING + id)
-      .then((resp) => {
-        Swal.fire({ title: resp.data })
-        loadData()
-      })
+    axios.delete(baseUrl+apiUrls.BOOKINGS_URL + id).then((resp) => {
+      Swal.fire({ title: resp.data })
+      loadData()
+    })
   }
+  // const loadData = () => {
+  //   axios.get(baseUrl+apiUrls.BOOKINGS_URL).then((resp) => {
+  //     setData(resp.data)
+  //   })
+  // }
+  // useEffect(() => {
+  //   loadData()
+  // }, [])
+  const [data, setData] = useState([])
+  // const handleCancel = (id) => {
+  //   axios
+  //     .get(baseUrl+apiUrls.CANCELLED_BOOKING + id)
+  //     .then((resp) => {
+  //       Swal.fire({ title: resp.data })
+  //       loadData()
+  //     })
+  // }
   const loadData = () => {
     axios
       .get(
@@ -40,6 +55,7 @@ export default function MyBookings() {
             <th>Cost</th>
             <th>Parking Date & Time</th>
             <th>Status</th>
+            <th>Action</th>
           </thead>
           <tbody>
             {data.map((x) => (
@@ -60,6 +76,16 @@ export default function MyBookings() {
                   {findslot(x?.show?.slot)}
                 </td>
                 <td>{x?.status}</td>
+                <td>
+                  {x.status === 'Booked' ? (
+                    <button
+                      onClick={(e) => handleCancel(x.bookingId)}
+                      className='btn btn-danger btn-sm'
+                    >
+                      Cancel Booking
+                    </button>
+                  ) : null} 
+                 </td> 
               </tr>
             ))}
           </tbody>

@@ -10,15 +10,15 @@ export default function SearchResult(props) {
   const findslot = (id) => {
     switch (id) {
       case 1:
-        return '09:00AM to 12:00PM'
-      case 2:
-        return '12:00PM to 03:00PM'
-      case 3:
-        return '03:00PM to 06:00PM'
-      case 4:
-        return '06:00PM to 09:00PM'
-      case 5:
-        return '09:00PM to 12:00PM'
+        return '00:00AM to 11:59PM,'
+      // case 2:
+      //   return '12:00PM to 03:00PM'
+      // case 3:
+      //   return '03:00PM to 06:00PM'
+      // case 4:
+      //   return '06:00PM to 09:00PM'
+      // case 5:
+      //   return '09:00PM to 12:00PM'
     }
   }
   const isuser =
@@ -32,9 +32,9 @@ export default function SearchResult(props) {
         <table className='table table-bordered table-responsive'>
           <thead>
             <tr>
-              <th>Park Name</th>
+              <th>Parking Name</th>
               <th>Time Slot</th>
-              <th>Park Address Details</th>
+              <th>Parking Address Details</th>
               <th>Parking Date</th>
               <th>Action</th>
             </tr>
@@ -81,7 +81,7 @@ export default function SearchResult(props) {
           </tbody>
         </table>
       ) : (
-        <h5 className='text-center p-2'>No Park found</h5>
+        <h5 className='text-center p-2'>No Parking found</h5>
       )}
     </div>
   )
